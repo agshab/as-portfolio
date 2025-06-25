@@ -8,16 +8,54 @@
   </head>
   <body>
     <header>
-      <div class="name-title">
-        <div class="name">Your Name</div>
-        <div class="title">Your Title</div>
+      <div class="left">
+        <h1>AS</h1>
       </div>
-      <div class="tabs">
-        <a href="#resume">Resume</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#pinterest">Pinterest</a>
-        <a href="#contact">Contact</a>
-      </div>
+      <nav class="right">
+        <a href="#">Resume</a>
+        <a href="#">Portfolio</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Contact</a>
+      </nav>
     </header>
+
+    <main>
+      <div class="profile-wrapper">
+        <svg
+          class="animated-circle"
+          width="210"
+          height="210"
+          viewBox="0 0 210 210"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="glowGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="black" />
+              <stop offset="100%" stop-color="white" />
+            </linearGradient>
+          </defs>
+          <circle
+            class="circle-outline"
+            cx="105"
+            cy="105"
+            r="100"
+            stroke="#333"
+            stroke-width="3"
+            fill="none"
+            stroke-dasharray="628.32"
+            stroke-dashoffset="628.32"
+          />
+        </svg>
+
+        <div class="profile-circle">
+          <img src="assets/profile.jpg" alt="Arshia Shabbir" />
+        </div>
+      </div>
+
+      <h2>Arshia Shabbir</h2>
+      <p class="title">Title</p>
+    </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
