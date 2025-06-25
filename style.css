@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid #ccc;
+}
+
+.name-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 24px;
+  color: black;
+}
+
+.title {
+  font-weight: normal;
+  font-size: 16px;
+  color: grey;
+}
+
+.tabs a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.tabs a:hover {
+  color: grey;
+}
