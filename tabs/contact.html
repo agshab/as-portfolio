@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact - AS Portfolio</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <h1>AS Portfolio</h1>
+      </div>
+      <nav class="right">
+        <a href="../index.html#home">Home</a>
+        <a href="resume.html">Resume</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="pinterest.html">Pinterest</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Contact container centered below header -->
+    <div class="contact-wrapper">
+      <div class="contact-container">
+        <div class="contact-column">
+          <div class="name-section">
+            <h2>Arshi Ashabbir</h2>
+            <div class="contact-info">
+              <!-- Email Icon -->
+              <div class="contact-item" aria-label="Email">
+                <img
+                  src="assets/email-1.svg"
+                  alt="Email icon"
+                  class="clickable-icon"
+                  onclick="showPopup('email')"
+                  style="cursor: pointer"
+                />
+              </div>
+
+              <!-- Phone Icon -->
+              <div class="contact-item" aria-label="Phone">
+                <img
+                  src="assets/phone.svg"
+                  alt="Phone icon"
+                  class="clickable-icon"
+                  onclick="showPopup('phone')"
+                  style="cursor: pointer"
+                />
+              </div>
+
+              <!-- LinkedIn Icon -->
+              <a
+                href="https://www.linkedin.com/in/arshiashabbir/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-item"
+                aria-label="LinkedIn"
+              >
+                <img src="assets/linkedin-1.svg" alt="LinkedIn icon" />
+              </a>
+
+              <!-- Pinterest Icon -->
+              <a
+                href="https://pin.it/4jXm2wNCg"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-item"
+                aria-label="Pinterest"
+              >
+                <img src="assets/pinterest-2.svg" alt="Pinterest icon" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Popup Modal for Email and Phone -->
+    <div id="popup" class="popup-overlay" style="display: none">
+      <div id="popup-content" class="popup-box"></div>
+    </div>
+
+    <script src="../script.js"></script>
+  </body>
+</html>

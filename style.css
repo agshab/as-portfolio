@@ -1,24 +1,31 @@
-/* style.css */
+/* ========================
+   Global Styles - style.css
+   ======================== */
+
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 body,
 html {
-  height: 100%;
+  min-height: 100%;
   background: url('assets/background-img.jpg') no-repeat center center fixed;
   background-size: cover;
   color: #111;
-  position: relative;
 }
 
 
+/* ========================
+   Header Section - index.html
+   ======================== */
 
 header {
   display: flex;
+  font-size: 1.2rem;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
@@ -32,6 +39,7 @@ header {
 
 .left h1 {
   font-weight: bold;
+  font-size: 3rem;
   color: black;
 }
 
@@ -47,16 +55,24 @@ nav.right a:hover {
   color: grey;
 }
 
+
+/* ========================
+   Main Home - index.html
+   ======================== */
+
 main {
-  height: 100vh;
+  min-height: 200vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
   position: relative;
-  top: 60px; /* offset for fixed header */
+  top: 60px;
+  z-index: 2;
+  padding-top: calc(50vh - 150px);
+  text-align: center;
   color: black;
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .profile-wrapper {
@@ -66,45 +82,35 @@ main {
   margin-bottom: 20px;
 }
 
-.animated-circle {
+.animated-square {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 1;
   width: 210px;
   height: 210px;
+  background: transparent;
 }
 
-/* Glow effect on SVG circle stroke */
-.circle-outline {
+.square-outline {
   stroke-width: 4;
   stroke-linecap: round;
-  stroke: url(#glowGradient);
-  filter:
-    drop-shadow(0 0 4px rgba(255, 255, 255, 0.7))
-    drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
-  transition: stroke 0.3s ease;
+  filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px white);
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
 }
 
-/* Thin subtle border around profile */
-.profile-circle {
-  border: 1.5px solid #888;
-  box-sizing: border-box;
-}
-
-
-.profile-circle {
+.profile-square {
   width: 180px;
   height: 180px;
-  border-radius: 50%;
   overflow: hidden;
   margin: 15px auto 0;
-  border: 3px solid black;
+  border: 1.5px solid rgba(0, 0, 0, 0.5);
   position: relative;
   z-index: 2;
 }
 
-.profile-circle img {
+.profile-square img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -113,8 +119,11 @@ main {
 main h2 {
   font-size: 2rem;
   font-weight: bold;
-  margin-bottom: 8px;
   color: black;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  position: relative;
+  top: -1rem;
 }
 
 main .title {
@@ -122,8 +131,479 @@ main .title {
   color: grey;
 }
 
-@keyframes drawCircle {
-  to {
-    stroke-dashoffset: 0;
+/* ========================
+   Resume Page - resume.html
+   ======================== */
+
+
+/* Resume Page Structure */
+.resume-page {
+  min-height: 200vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  top: 60px;
+  z-index: 2;
+  padding-top: calc(50vh - 150px);
+  text-align: center;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px 20px;
+  border-radius: 8px;
+}
+
+/* Professional Summary Section */
+.summary-block {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 20px;
+  color: #111;
+  text-align: center;
+}
+
+.summary-block h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.summary-block p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: #333;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Resume Content Grid */
+.resume-content {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: nowrap;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.left-column {
+  flex-basis: 68%;
+  min-width: 300px;
+}
+
+.right-column {
+  flex-basis: 32%;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.left-column h3,
+.right-column h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #555;
+  padding-bottom: 8px;
+}
+
+/* Work History Section */
+.work-history section {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+.work-history h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  color: #222;
+}
+
+.work-history span {
+  font-size: 0.9rem;
+  color: #666;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.work-history ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Right Column Content (e.g. Skills) */
+.right-column ul {
+  list-style-type: none;
+  padding-left: 0;
+  color: #444;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.skills-section .skills-category {
+  margin-bottom: 20px;
+}
+
+.skills-section h4 {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.skills-section p {
+  margin-left: 15px;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.3;
+}
+
+/* Responsive Behavior */
+@media (max-width: 900px) {
+  .resume-content {
+    flex-direction: column;
+  }
+
+  .left-column,
+  .right-column {
+    flex-basis: 100%;
+    min-width: auto;
   }
 }
+
+/* ========================
+   Contact Page - contact.html
+   ======================== */
+
+
+/* Contact Page Styles */
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px);
+  padding-top: 60px;
+  box-sizing: border-box;
+}
+
+.contact-container {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 30px 20px;
+  margin: 20px auto;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.name-section h2 {
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  color: #444;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-item img {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  filter: invert(30%);
+}
+
+.contact-item:hover {
+  color: #000000;
+}
+
+/* Popup Overlay & Box */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background-color: #000;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  max-width: 300px;
+  text-align: center;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border: none;
+}
+
+.popup-box {
+  background: rgba(0, 0, 0, 0.55);
+  padding: 20px 30px;
+  border-radius: 8px;
+  text-align: center;
+  color: white;
+  max-width: 300px;
+  font-weight: 400;
+  font-size: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.popup-box a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.popup-close {
+  display: inline-block;
+  margin-top: 15px;
+  color: #ffffff;
+  cursor: pointer;
+  font-weight: bold;
+  user-select: none;
+}
+
+/* ========================
+   Pinterest Page - pinterest.html
+   ======================== */
+
+.pinterest {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.pinterest-info-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin: 2rem 0 2.5rem 0;
+}
+
+.pinterest-icon-link img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px white);
+}
+
+.pinterest-icon-link img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px white) drop-shadow(0 0 25px white);
+}
+
+.pinterest-info-wrapper p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  margin: 0;
+}
+
+.boards-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.board-column,
+.collage-column {
+  border: 1.5px solid black;
+  box-shadow: 0 0 8px #fff, 0 0 15px #fff, 0 0 20px #fff;
+  border-radius: 8px;
+  background: transparent !important;
+  padding: 15px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.board-column {
+  flex: 1;
+}
+
+.board-column img {
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.board-column img:hover {
+  transform: scale(1.05);
+}
+
+.collage-container {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 15px;
+  background: transparent !important;
+  box-shadow: 0 0 20px #fff;
+  border: 1.5px solid black;
+  box-sizing: border-box;
+}
+
+.collage-dropzone {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px;
+  border: 2px dashed #bbb;
+  border-radius: 8px;
+  background-color: #fafafa;
+  min-height: 300px;
+  color: #777;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+.collage-column.small {
+  flex: 1 1 30%;
+  height: 120px;
+  min-width: 150px;
+}
+
+.collage-column.medium {
+  flex: 1 1 45%;
+  height: 180px;
+  min-width: 220px;
+}
+
+.collage-column.large {
+  flex: 1 1 100%;
+  height: 240px;
+  min-width: 100%;
+}
+
+.boards-titles {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.boards-titles h2 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+}
+
+
+/* ========================
+   Portfolio Page - portfolio.html
+   ======================== */
+   
+.boards-titles {
+  display: flex;
+  justify-content: space-between;  /* space between headings */
+  max-width: 1200px;
+  margin: 0 auto 1rem; /* center and some bottom spacing */
+  padding: 0 15px;     /* same as boards container */
+  box-sizing: border-box;
+}
+
+.boards-titles h2 {
+  flex: 1;
+  text-align: center;   /* center heading over each column */
+  margin: 0;
+  font-weight: 600;
+}
+
+.portfolio-intro {
+  text-align: center;
+  margin-top: 120px; /* space below header */
+  margin-bottom: 40px; /* space before tech section */
+}
+
+.tech-projects {
+  margin-bottom: 80px;
+  /* max-width: 2000px; */
+}
+
+/* Container that wraps the entire portfolio section */
+.portfolio-wrapper {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 20px;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.258);
+  box-shadow:
+    0 0 8px #fff,
+    0 0 15px #fff,
+    0 0 25px #fff;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+/* Portfolio Title aligned to the left */
+.portfolio-title {
+  margin: 0 0 1.5rem 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Grid that holds the project cards */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ensures spacing is even */
+  gap: 2rem; /* Consistent spacing like the boards layout */
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Individual project card */
+.project-card {
+  flex: 1 1 calc(33.333% - 2rem); /* 3 per row with spacing */
+  min-width: 280px;
+  border: 1.5px solid black;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+}
+

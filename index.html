@@ -3,26 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>as portfolio</title>
+    <title>AS Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
-      <div class="left">
-        <h1>AS</h1>
-      </div>
+      <div class="left"><h1>AS</h1></div>
       <nav class="right">
-        <a href="#">Resume</a>
-        <a href="#">Portfolio</a>
-        <a href="#">Pinterest</a>
-        <a href="#">Contact</a>
+        <a href="#home">Home</a>
+        <a href="tabs/resume.html">Resume</a>
+        <a href="tabs/portfolio.html">Portfolio</a>
+        <a href="tabs/pinterest.html">Pinterest</a>
+        <a href="tabs/contact.html">Contact</a>
       </nav>
     </header>
 
     <main>
       <div class="profile-wrapper">
         <svg
-          class="animated-circle"
+          class="animated-square"
           width="210"
           height="210"
           viewBox="0 0 210 210"
@@ -34,20 +37,21 @@
               <stop offset="100%" stop-color="white" />
             </linearGradient>
           </defs>
-          <circle
-            class="circle-outline"
-            cx="105"
-            cy="105"
-            r="100"
-            stroke="#333"
+          <rect
+            class="square-outline"
+            x="5"
+            y="5"
+            width="200"
+            height="200"
+            stroke="url(#glowGradient)"
             stroke-width="3"
             fill="none"
-            stroke-dasharray="628.32"
-            stroke-dashoffset="628.32"
+            stroke-dasharray="800"
+            stroke-dashoffset="800"
           />
         </svg>
 
-        <div class="profile-circle">
+        <div class="profile-square">
           <img src="assets/profile.jpg" alt="Arshia Shabbir" />
         </div>
       </div>
