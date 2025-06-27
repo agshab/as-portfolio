@@ -10,14 +10,24 @@
   <body>
     <!-- 1. Header -->
     <header>
-      <div class="left"><h1>AS</h1></div>
-      <nav class="right">
-        <a href="../index.html">Home</a>
-        <a href="resume.html">Resume</a>
-        <a href="pinterest.html">Pinterest</a>
-        <a href="portfolio.html" class="active">Portfolio</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+      <!-- Hamburger Dropdown -->
+      <div class="dropdown">
+        <button
+          class="dropdown-button"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          <span class="hamburger-icon"></span>
+        </button>
+        <div class="dropdown-content hidden" id="dropdown-menu">
+          <a href="../index.html">Home</a>
+          <a href="/tabs/resume.html">Resume</a>
+          <a href="/tabs/portfolio.html">Portfolio</a>
+          <a href="/tabs/pinterest.html">Pinterest</a>
+          <a href="/tabs/contact.html">Contact</a>
+        </div>
+      </div>
     </header>
 
     <main>

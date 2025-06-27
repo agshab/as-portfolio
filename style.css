@@ -1,5 +1,5 @@
 /* ========================
-   Global Styles - style.css
+   Global Styles
    ======================== */
 
 /* Reset & Base */
@@ -7,282 +7,615 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
-body,
-html {
-  min-height: 100%;
-  background: url('assets/background-img.jpg') no-repeat center center fixed;
+html, body {
+  height: 100%;
+  /* background: url('assets/background-img.jpg') no-repeat center center fixed; */
   background-size: cover;
-  color: #111;
+  color: #000 !important;
 }
-
 
 /* ========================
-   Header Section - index.html
+   General Container Layout
+   ======================== */
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  gap: 20px;
+  box-sizing: border-box;
+}
+
+/* Left and Right Containers */
+.left-container,
+.right-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+/* Left Container (Profile) */
+.left-container {
+  justify-content: center;
+  align-items: center;
+}
+
+/* Right Container (Content & Menu) */
+.right-container {
+  position: relative;
+  padding: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* ========================
+   Profile Box Styles
+   ======================== */
+
+.profile-box {
+  border: 2px solid #333;
+  padding: 30px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.8);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.profile-box img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.profile-box h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.profile-box p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* ========================
+   Header & Dropdown Menu Styles
    ======================== */
 
 header {
-  display: flex;
-  font-size: 1.2rem;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: transparent;
-  z-index: 10;
-}
-
-.left h1 {
-  font-weight: bold;
-  font-size: 3rem;
-  color: black;
-}
-
-nav.right a {
-  margin-left: 25px;
-  text-decoration: none;
-  font-weight: 600;
-  color: white;
-  transition: color 0.3s ease;
-}
-
-nav.right a:hover {
-  color: grey;
-}
-
-
-/* ========================
-   Main Home - index.html
-   ======================== */
-
-main {
-  min-height: 200vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  top: 60px;
-  z-index: 2;
-  padding-top: calc(50vh - 150px);
-  text-align: center;
-  color: black;
-  margin-bottom: 1rem;
-  width: 100%;
-}
-
-.profile-wrapper {
-  position: relative;
-  width: 210px;
-  height: 210px;
-  margin-bottom: 20px;
-}
-
-.animated-square {
+  background-color: rgba(89, 68, 68, 0.278); /* match home */
   position: absolute;
   top: 0;
+  right: 0;
+  width: 140%;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+/* Dropdown Container */
+.dropdown {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+}
+
+/* Dropdown Toggle Button */
+.dropdown-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  position: relative;
+}
+
+/* Hamburger Icon Lines */
+.hamburger-icon {
+  width: 25px;
+  height: 3px;
+  background-color: #000;
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: #000;
   left: 0;
-  z-index: 1;
-  width: 210px;
-  height: 210px;
+}
+
+.hamburger-icon::before {
+  top: -8px;
+}
+
+.hamburger-icon::after {
+  top: 8px;
+}
+
+/* Dropdown Menu Content */
+.dropdown-content {
+  display: block; /* layout default, hide/show with class */
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  white-space: nowrap;
+  margin-top: 10px;
+  z-index: 1050;
+}
+
+/* Show Menu When Active */
+.dropdown-content.show {
+  display: block;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+  color: #000;
   background: transparent;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  display: flex;
+  transition: background-color 0.2s ease;
 }
 
-.square-outline {
-  stroke-width: 4;
-  stroke-linecap: round;
-  filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px white);
-  stroke-dasharray: 800;
-  stroke-dashoffset: 800;
+.dropdown-content a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.profile-square {
-  width: 180px;
-  height: 180px;
-  overflow: hidden;
-  margin: 15px auto 0;
-  border: 1.5px solid rgba(0, 0, 0, 0.5);
-  position: relative;
-  z-index: 2;
-}
-
-.profile-square img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-main h2 {
-  font-size: 2rem;
-  font-weight: bold;
-  color: black;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  position: relative;
-  top: -1rem;
-}
-
-main .title {
-  font-size: 1.2rem;
-  color: grey;
+/* Utility - Hide Element */
+.hidden {
+  display: none !important;
 }
 
 /* ========================
-   Resume Page - resume.html
+   Resume Page Specific Styles
    ======================== */
 
-
-/* Resume Page Structure */
-.resume-page {
-  min-height: 200vh;
+/* Main Layout Container */
+.container.layout-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  top: 60px;
-  z-index: 2;
-  padding-top: calc(50vh - 150px);
-  text-align: center;
-  color: black;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 40px 20px;
-  border-radius: 8px;
-}
-
-/* Professional Summary Section */
-.summary-block {
   max-width: 1200px;
-  margin: 0 auto 40px;
+  margin: 60px auto 40px; /* space below header */
+  gap: 20px;
   padding: 0 20px;
-  color: #111;
+  box-sizing: border-box;
+}
+
+/* Left Panel (Profile) */
+.left-panel {
+  flex-basis: 25%;
   text-align: center;
 }
 
-.summary-block h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-  font-weight: bold;
+.left-panel img {
+  border-radius: 50%;
+  max-width: 100%;
+  height: auto;
 }
 
-.summary-block p {
+.left-panel h2 {
+  margin-top: 15px;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.left-panel p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+/* Hire Me Button under profile */
+.hire-me-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: #0073e6;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.hire-me-btn:hover,
+.hire-me-btn:focus {
+  background-color: #005bb5;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Middle Panel (Content) */
+.middle-panel {
+  flex-grow: 1;
+  padding: 0 20px;
+}
+
+.middle-panel h3 {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #222;
+}
+
+.middle-panel p {
   font-size: 1rem;
   line-height: 1.6;
-  margin-bottom: 16px;
+  color: #444;
+}
+
+/* Right Panel (Hamburger Menu) */
+.right-panel {
+  flex-basis: 10%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 10px 0 0;
+}
+
+/* Skill Bars */
+.skill {
+  margin-bottom: 15px;
+}
+
+.skill-name {
+  font-weight: 600;
   color: #333;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
+  margin-bottom: 6px;
+  font-size: 1rem;
 }
 
-/* Resume Content Grid */
-.resume-content {
+.skill-bar {
+  background-color: #ddd;
+  height: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.skill-level {
+  height: 100%;
+  background-color: #0073e6;
+  border-radius: 8px 0 0 8px;
+  transition: width 0.5s ease-in-out;
+}
+
+/* Split Section Wrapper */
+.split-section-wrapper {
   display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: nowrap;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 0;
-}
-
-.left-column {
-  flex-basis: 68%;
-  min-width: 300px;
-}
-
-.right-column {
-  flex-basis: 32%;
-  min-width: 280px;
-  display: flex;
-  flex-direction: column;
+  margin: 40px auto;
   gap: 40px;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.left-column h3,
-.right-column h3 {
+.split-left,
+.split-right {
+  flex: 1;
+}
+
+.split-left h3,
+.split-right h3 {
   font-size: 1.5rem;
   margin-bottom: 20px;
+  font-weight: 700;
   border-bottom: 2px solid #555;
   padding-bottom: 8px;
 }
 
-/* Work History Section */
-.work-history section {
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ccc;
+/* Job and Education Sections */
+.job, 
+.education {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
-.work-history h4 {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 4px;
+.job h4,
+.education h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
   color: #222;
 }
 
-.work-history span {
+.job span {
+  display: block;
   font-size: 0.9rem;
   color: #666;
-  display: block;
   margin-bottom: 8px;
 }
 
-.work-history ul {
-  list-style-type: disc;
-  padding-left: 20px;
+.job p {
+  font-size: 1rem;
   color: #444;
-  font-size: 0.95rem;
   line-height: 1.4;
-}
-
-/* Right Column Content (e.g. Skills) */
-.right-column ul {
-  list-style-type: none;
-  padding-left: 0;
-  color: #444;
-  font-size: 0.95rem;
-  line-height: 1.4;
-}
-
-.skills-section .skills-category {
   margin-bottom: 20px;
 }
 
-.skills-section h4 {
-  font-weight: 600;
-  margin-bottom: 6px;
-  color: #333;
+.education ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-top: 0;
 }
 
-.skills-section p {
-  margin-left: 15px;
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.3;
-}
+/* ========================
+   Responsive Styles
+   ======================== */
 
-/* Responsive Behavior */
 @media (max-width: 900px) {
-  .resume-content {
+  .container.layout-container,
+  .split-section-wrapper {
     flex-direction: column;
   }
+  
+  .left-panel,
+  .middle-panel,
+  .right-panel,
+  .split-left,
+  .split-right {
+    flex-basis: auto;
+    max-width: 100%;
+  }
 
-  .left-column,
-  .right-column {
-    flex-basis: 100%;
-    min-width: auto;
+  .right-panel {
+    justify-content: flex-start;
+    padding-left: 20px;
+    margin-top: 15px;
   }
 }
+
+
+/* ========================
+   Portfolio Page - portfolio.html
+   ======================== */
+   
+.boards-titles {
+  display: flex;
+  justify-content: space-between;  /* space between headings */
+  max-width: 1200px;
+  margin: 0 auto 1rem; /* center and some bottom spacing */
+  padding: 0 15px;     /* same as boards container */
+  box-sizing: border-box;
+}
+
+.boards-titles h2 {
+  flex: 1;
+  text-align: center;   /* center heading over each column */
+  margin: 0;
+  font-weight: 600;
+}
+
+.portfolio-intro {
+  text-align: center;
+  margin-top: 120px; /* space below header */
+  margin-bottom: 40px; /* space before tech section */
+}
+
+.tech-projects {
+  margin-bottom: 80px;
+  /* max-width: 2000px; */
+}
+
+/* Container that wraps the entire portfolio section */
+.portfolio-wrapper {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 20px;
+  border: 1.5px solid black;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.258);
+  box-shadow:
+    0 0 8px #fff,
+    0 0 15px #fff,
+    0 0 25px #fff;
+  box-sizing: border-box;
+  position: relative;
+}
+
+
+/* Portfolio Title aligned to the left */
+.portfolio-title {
+  margin: 0 0 1.5rem 0;
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* Grid that holds the project cards */
+.project-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Ensures spacing is even */
+  gap: 2rem; /* Consistent spacing like the boards layout */
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Individual project card */
+.project-card {
+  flex: 1 1 calc(33.333% - 2rem); /* 3 per row with spacing */
+  min-width: 280px;
+  border: 1.5px solid black;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  box-sizing: border-box;
+}
+
+/* ========================
+   Pinterest Page - pinterest.html
+   ======================== */
+
+.pinterest {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.pinterest-info-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  margin: 2rem 0 2.5rem 0;
+}
+
+.pinterest-icon-link img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px white);
+}
+
+.pinterest-icon-link img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px white) drop-shadow(0 0 25px white);
+}
+
+.pinterest-info-wrapper p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+  margin: 0;
+}
+
+.boards-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.board-column,
+.collage-column {
+  /* border: 0px solid black; */
+  /* box-shadow: 0 0 8px #fff, 0 0 15px #fff, 0 0 20px #fff; */
+  /* background: transparent !important; */
+  border-radius: 5px;
+  padding: 0px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.board-column {
+  flex: 1;
+}
+
+.board-column img {
+  width: 100%;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.board-column img:hover {
+  transform: scale(1.05);
+}
+
+.collage-container {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 15px;
+  background: transparent !important;
+  box-shadow: 0 0 20px #fff;
+  border: 1.5px solid black;
+  box-sizing: border-box;
+}
+
+.collage-dropzone {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 15px;
+  border: 2px dashed #bbb;
+  border-radius: 8px;
+  background-color: #fafafa;
+  min-height: 300px;
+  color: #777;
+  font-size: 1.1rem;
+  user-select: none;
+}
+
+.collage-column.small {
+  flex: 1 1 30%;
+  height: 120px;
+  min-width: 150px;
+}
+
+.collage-column.medium {
+  flex: 1 1 45%;
+  height: 180px;
+  min-width: 220px;
+}
+
+.collage-column.large {
+  flex: 1 1 100%;
+  height: 240px;
+  min-width: 100%;
+}
+
+.boards-titles {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 1rem;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.boards-titles h2 {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+  font-weight: 600;
+}
+
 
 /* ========================
    Contact Page - contact.html
    ======================== */
-
 
 /* Contact Page Styles */
 .contact-wrapper {
@@ -391,219 +724,3 @@ main .title {
   font-weight: bold;
   user-select: none;
 }
-
-/* ========================
-   Pinterest Page - pinterest.html
-   ======================== */
-
-.pinterest {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 15px;
-  box-sizing: border-box;
-}
-
-.pinterest-info-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
-  margin: 2rem 0 2.5rem 0;
-}
-
-.pinterest-icon-link img {
-  width: 40px;
-  height: 40px;
-  transition: transform 0.3s ease, filter 0.3s ease;
-  filter: drop-shadow(0 0 5px white) drop-shadow(0 0 10px white);
-}
-
-.pinterest-icon-link img:hover {
-  transform: scale(1.1);
-  filter: drop-shadow(0 0 15px white) drop-shadow(0 0 25px white);
-}
-
-.pinterest-info-wrapper p {
-  font-size: 1rem;
-  font-weight: 500;
-  color: black;
-  margin: 0;
-}
-
-.boards-container {
-  display: flex;
-  justify-content: flex-start;
-  gap: 4rem;
-  width: 100%;
-  margin-bottom: 2rem;
-}
-
-.board-column,
-.collage-column {
-  border: 1.5px solid black;
-  box-shadow: 0 0 8px #fff, 0 0 15px #fff, 0 0 20px #fff;
-  border-radius: 8px;
-  background: transparent !important;
-  padding: 15px;
-  max-height: 600px;
-  overflow-y: auto;
-}
-
-.board-column {
-  flex: 1;
-}
-
-.board-column img {
-  width: 100%;
-  margin-bottom: 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.board-column img:hover {
-  transform: scale(1.05);
-}
-
-.collage-container {
-  width: 100%;
-  margin: 2rem 0;
-  padding: 15px;
-  background: transparent !important;
-  box-shadow: 0 0 20px #fff;
-  border: 1.5px solid black;
-  box-sizing: border-box;
-}
-
-.collage-dropzone {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 15px;
-  border: 2px dashed #bbb;
-  border-radius: 8px;
-  background-color: #fafafa;
-  min-height: 300px;
-  color: #777;
-  font-size: 1.1rem;
-  user-select: none;
-}
-
-.collage-column.small {
-  flex: 1 1 30%;
-  height: 120px;
-  min-width: 150px;
-}
-
-.collage-column.medium {
-  flex: 1 1 45%;
-  height: 180px;
-  min-width: 220px;
-}
-
-.collage-column.large {
-  flex: 1 1 100%;
-  height: 240px;
-  min-width: 100%;
-}
-
-.boards-titles {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto 1rem;
-  padding: 0 15px;
-  box-sizing: border-box;
-}
-
-.boards-titles h2 {
-  flex: 1;
-  text-align: center;
-  margin: 0;
-  font-weight: 600;
-}
-
-
-/* ========================
-   Portfolio Page - portfolio.html
-   ======================== */
-   
-.boards-titles {
-  display: flex;
-  justify-content: space-between;  /* space between headings */
-  max-width: 1200px;
-  margin: 0 auto 1rem; /* center and some bottom spacing */
-  padding: 0 15px;     /* same as boards container */
-  box-sizing: border-box;
-}
-
-.boards-titles h2 {
-  flex: 1;
-  text-align: center;   /* center heading over each column */
-  margin: 0;
-  font-weight: 600;
-}
-
-.portfolio-intro {
-  text-align: center;
-  margin-top: 120px; /* space below header */
-  margin-bottom: 40px; /* space before tech section */
-}
-
-.tech-projects {
-  margin-bottom: 80px;
-  /* max-width: 2000px; */
-}
-
-/* Container that wraps the entire portfolio section */
-.portfolio-wrapper {
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 20px;
-  border: 1.5px solid black;
-  border-radius: 10px;
-  background-color: rgba(0, 0, 0, 0.258);
-  box-shadow:
-    0 0 8px #fff,
-    0 0 15px #fff,
-    0 0 25px #fff;
-  box-sizing: border-box;
-  position: relative;
-}
-
-
-/* Portfolio Title aligned to the left */
-.portfolio-title {
-  margin: 0 0 1.5rem 0;
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: left;
-}
-
-/* Grid that holds the project cards */
-.project-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; /* Ensures spacing is even */
-  gap: 2rem; /* Consistent spacing like the boards layout */
-  padding: 0;
-  margin: 0 auto;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* Individual project card */
-.project-card {
-  flex: 1 1 calc(33.333% - 2rem); /* 3 per row with spacing */
-  min-width: 280px;
-  border: 1.5px solid black;
-  padding: 15px;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-  box-sizing: border-box;
-}
-

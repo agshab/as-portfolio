@@ -8,17 +8,28 @@
     <link rel="stylesheet" href="pinterest.css" />
   </head>
   <body>
-    <header>
-      <div class="left"><h1>AS</h1></div>
-      <nav class="right">
-        <a href="../index.html">Home</a>
-        <a href="resume.html">Resume</a>
-        <a href="portfolio.html">Portfolio</a>
-        <a href="pinterest.html">Pinterest</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+    <!-- Header with Dropdown -->
+    <header class="header">
+      <div class="dropdown">
+        <button
+          class="dropdown-button"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          <span class="hamburger-icon"></span>
+        </button>
+        <div class="dropdown-content hidden" id="dropdown-menu">
+          <a href="../index.html">Home</a>
+          <a href="/tabs/resume.html">Resume</a>
+          <a href="/tabs/portfolio.html">Portfolio</a>
+          <a href="/tabs/pinterest.html">Pinterest</a>
+          <a href="/tabs/contact.html">Contact</a>
+        </div>
+      </div>
     </header>
 
+    <!-- MAIN CONTENT -->
     <main>
       <div class="pinterest">
         <!-- Pinterest Info Wrapper -->
@@ -32,7 +43,7 @@
           >
             <img src="../assets/pinterest-2.svg" alt="Pinterest icon" />
           </a>
-          <p>Check out the full board for more curated styles.</p>
+          <p>Explore the full collection on Pinterest.</p>
         </div>
 
         <!-- Boards Container -->
@@ -40,24 +51,30 @@
           <div class="board-column" id="board1">
             <h3></h3>
             <div class="image-scroll">
-              <img src="assets/board1/img1.jpg" alt="1" />
-              <img src="assets/board1/img2.jpg" alt="2" />
-              <img src="assets/board1/img3.jpg" alt="3" />
+              <!-- Place your image tags here -->
+              <img src="../assets/1.jpg" alt="1" />
+              <img src="../assets/2.jpg" alt="2" />
+              <img src="../assets/3.jpg" alt="3" />
+              <img src="../assets/4.jpg" alt="4" />
+              <img src="../assets/5.jpg" alt="5" />
             </div>
           </div>
 
           <div class="board-column" id="board2">
             <h3></h3>
             <div class="image-scroll">
-              <img src="assets/board2/img1.jpg" alt="1" />
-              <img src="assets/board2/img2.jpg" alt="2" />
-              <img src="assets/board2/img3.jpg" alt="3" />
+              <!-- Place your image tags here -->
+              <img src="../assets/1a.jpg" alt="1a" />
+              <img src="../assets/2a.jpg" alt="2a" />
+              <img src="../assets/3a.jpg" alt="3a" />
+              <img src="../assets/4a.jpg" alt="4a" />
+              <img src="../assets/5a.jpg" alt="5a" />
             </div>
           </div>
         </div>
 
         <!-- Collage Container -->
-        <div class="collage-container">
+        <!-- <div class="collage-container">
           <h3></h3>
           <div class="collage-dropzone">
             <div class="collage-column small"></div>
@@ -65,13 +82,63 @@
             <div class="collage-column large"></div>
             <div class="collage-column medium"></div>
           </div>
-        </div>
+        </div> -->
+
+        <!-- Summer Mood Board Description -->
+        <section
+          class="summer-description"
+          style="max-width: 900px; margin: 2rem auto; padding: 0 15px"
+        >
+          <h2>Summer — Where Everything is Bright and Colorful</h2>
+          <p>
+            A vibrant collection of bright colors, warm vibes, and fresh ideas
+            that perfectly capture the essence of summer — from sun-soaked days
+            and refreshing cool drinks to thrilling outdoor adventures and
+            effortless, fun style.
+          </p>
+          <p>
+            I had a great time creating this board, sifting through countless
+            pins to draw inspiration and hand-curate bright, colorful images
+            that speak to me and represent what summer feels like. I invite you
+            to explore and peek into my personal creative style while
+            encouraging you to create your own dream collection of summer
+            inspiration.
+          </p>
+        </section>
+
+        <!-- Feedback & Suggestions Section -->
+        <section
+          class="feedback-suggestions"
+          style="max-width: 900px; margin: 2rem auto 4rem; padding: 0 15px"
+        >
+          <h2>
+            Feedback &amp; Suggestions for Pinterest’s Mood Board Experience
+          </h2>
+          <p>
+            A mood board is a fantastic starting point for planning any
+            campaign, experimenting with new looks, refreshing personal style,
+            or simply scrolling through endless pins to gather ideas.
+          </p>
+          <p>
+            While organizing my board, I noticed some limitations that could be
+            improved: currently, pins can only be moved one at a time, and there
+            isn’t a zoom-out or overview feature to give users a better sense of
+            the overall layout.
+          </p>
+          <p>
+            Adding a side panel with tools to create collages, drag multiple
+            pins simultaneously, and view suggested pins while organizing would
+            greatly enhance the user experience. This would make it easier for
+            users to curate boards with a strong visual flow, keep them
+            organized, and continue discovering inspiration seamlessly.
+          </p>
+        </section>
       </div>
     </main>
-
-    <!-- Transparent Footer Space -->
-    <footer class="footer-spacer"></footer>
-
+    <!-- Popup Modal -->
+    <div id="popup" class="popup-overlay" style="display: none">
+      <div id="popup-content" class="popup-box"></div>
+    </div>
     <script src="../script.js"></script>
   </body>
 </html>

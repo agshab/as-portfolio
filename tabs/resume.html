@@ -3,69 +3,234 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Resume</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Resume - AS Portfolio</title>
+    <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <div class="resume-wrapper">
-      <div class="left-column">
-        <div class="left-top">
-          <img
-            class="profile-photo"
-            src="https://colorlib.com/preview/theme/meetme/img/personal.jpg"
-            alt="Profile Photo"
-          />
-          <h1 class="name">Arshia Shabbir</h1>
-          <h2 class="role">
-            Digital Marketing & Technology Solutions Specialist
-          </h2>
-        </div>
-        <div class="left-bottom">
-          <h3>About Me</h3>
-          <p>
-            Versatile, detail-oriented professional with over 6 years of
-            experience in digital marketing and technology, blending creativity
-            with technical expertise to deliver data-driven, scalable solutions.
-          </p>
-        </div>
-      </div>
+    <!-- Header -->
+    <header class="header">
+      <!-- You can style this however you'd like -->
+    </header>
 
-      <div class="right-column">
-        <div class="right-top">
-          <div class="quick-facts">
-            <p>10+ years in Design</p>
-            <p>6+ years in Coding</p>
-            <p>Master's Degree in Marketing & Tech</p>
+    <!-- Main Container -->
+    <div class="container layout-container">
+      <!-- Left Panel (25%) -->
+      <aside class="left-panel">
+        <img
+          src="assets/profile.jpg"
+          alt="Arshia Shabbir"
+          width="200"
+          height="200"
+          loading="lazy"
+        />
+        <h2>Arshia Shabbir</h2>
+        <p>Digital Marketing & Technology Solutions Specialist</p>
+        <a
+          href="/tabs/contact.html"
+          class="hire-me-btn"
+          aria-label="Hire Me - Contact"
+        >
+          <span class="hire-me-icon">💼</span> Hire Me
+        </a>
+      </aside>
+
+      <!-- Middle Panel (flex/grow) -->
+      <main class="middle-panel">
+        <h3>About Me</h3>
+        <p>
+          I am a passionate digital marketing and technology solutions
+          specialist with experience bridging creativity and technical skills to
+          create impactful digital experiences. I enjoy working on full-stack
+          development, product design, and launching innovative web tools. My
+          goal is to craft elegant and efficient solutions that bring ideas to
+          life and engage audiences meaningfully.
+        </p>
+      </main>
+
+      <!-- Right Panel (10%) -->
+      <aside class="right-panel">
+        <div class="dropdown">
+          <button
+            class="dropdown-button"
+            id="nav-toggle"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            <span class="hamburger-icon"></span>
+          </button>
+          <div class="dropdown-content hidden" id="dropdown-menu">
+            <a href="#">Home</a>
+            <a href="/tabs/resume.html">Resume</a>
+            <a href="/tabs/portfolio.html">Portfolio</a>
+            <a href="/tabs/pinterest.html">Pinterest</a>
+            <a href="/tabs/contact.html">Contact</a>
           </div>
         </div>
-
-        <div class="skills-section">
-          <h3>Skills</h3>
-          <!-- Sample skill block -->
-          <div class="skill">
-            <p>JavaScript</p>
-            <div class="skill-bar"><div style="width: 85%"></div></div>
-          </div>
-          <!-- Repeat as needed for other skills -->
-        </div>
-
-        <div class="services-section">
-          <h3>My Services</h3>
-          <div class="service-item">
-            <p>Web Development</p>
-            <small
-              >Custom curated web/mobile-ready applications to help you launch
-              your business</small
-            >
-          </div>
-          <!-- Add more service items if needed -->
-        </div>
-
-        <div class="cta-buttons">
-          <a href="#" class="btn download">Download CV</a>
-          <a href="contact.html" class="btn hire">Hire Me</a>
-        </div>
-      </div>
+      </aside>
     </div>
+
+    <!-- Skills Section -->
+    <div class="split-section-wrapper">
+      <!-- Left Side: Creativity & Marketing + Project Management + Soft Skills -->
+      <section class="split-left">
+        <h3>Creativity & Marketing</h3>
+        <div class="skill">
+          <div class="skill-name">Project Management (Agile)</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Content Creation</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Brand Development</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Social Media Management</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">SEO & SEM</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Influencer Marketing</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 65%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Campaign Management</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Creative Thinking</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Leadership & Communication</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Problem-Solving</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 75%"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Side: Management & Technical + extra skill -->
+      <section class="split-right">
+        <h3>Management & Technical</h3>
+        <div class="skill">
+          <div class="skill-name">C#</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 80%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">SQL</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 75%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">JavaScript</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">HTML & CSS</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Azure & Docker</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 65%"></div>
+          </div>
+        </div>
+        <div class="skill">
+          <div class="skill-name">Version Control (GitHub)</div>
+          <div class="skill-bar">
+            <div class="skill-level" style="width: 80%"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Work History Section -->
+    <section class="work-history">
+      <h3>Work History</h3>
+      <div class="job">
+        <h4>Receptionist — Morgan & Morgan</h4>
+        <span>Oct 2018 – Oct 2019</span>
+        <p>
+          Handled client communications, scheduling, and office operations with
+          efficiency and professionalism.
+        </p>
+      </div>
+
+      <div class="job">
+        <h4>Marketing & Communication Consultant — PennyAppeal USA</h4>
+        <span>Oct 2018 – Aug 2019</span>
+        <p>
+          Developed marketing proposals, managed campaigns, and coordinated
+          influencer partnerships to increase outreach.
+        </p>
+      </div>
+
+      <div class="job">
+        <h4>Social Media Marketing Intern — PennyAppeal USA</h4>
+        <span>May 2018 – Oct 2018</span>
+        <p>
+          Created social content, engaged audiences, and supported influencer
+          collaborations to boost brand presence.
+        </p>
+      </div>
+
+      <div class="job">
+        <h4>Marketing Research Analyst — Conficare</h4>
+        <span>Dec 2014 – May 2015</span>
+        <p>
+          Generated market insights and tracked KPIs to inform strategic
+          business decisions.
+        </p>
+      </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="education">
+      <h3>Education</h3>
+      <ul>
+        <li>
+          <strong>Bachelor of Science in Marketing</strong>, University XYZ
+        </li>
+        <li>Certified Digital Marketing Professional (CDMP)</li>
+        <li>Ongoing Certifications: Software and Web Development</li>
+      </ul>
+    </section>
+
+    <link rel="stylesheet" href="../style.css" />
+    <script src="../script.js"></script>
   </body>
 </html>
