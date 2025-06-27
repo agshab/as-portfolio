@@ -7,9 +7,25 @@
     <link rel="stylesheet" href="../style.css" />
   </head>
   <body>
-    <!-- Header -->
-    <header class="header">
-      <!-- You can style this however you'd like -->
+    <!-- Fixed Header with Navigation -->
+    <header class="main-header">
+      <div class="dropdown">
+        <button
+          class="dropdown-button"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          <span class="hamburger-icon"></span>
+        </button>
+        <div class="dropdown-content hidden" id="dropdown-menu">
+          <a href="/">Home</a>
+          <a href="/tabs/resume.html">Resume</a>
+          <a href="/tabs/portfolio.html">Portfolio</a>
+          <a href="/tabs/pinterest.html">Pinterest</a>
+          <a href="/tabs/contact.html">Contact</a>
+        </div>
+      </div>
     </header>
 
     <!-- Main Container -->
@@ -17,7 +33,7 @@
       <!-- Left Panel (25%) -->
       <aside class="left-panel">
         <img
-          src="assets/profile.jpg"
+          src="../assets/IMG_0682.jpg"
           alt="Arshia Shabbir"
           width="200"
           height="200"
@@ -47,25 +63,9 @@
         </p>
       </main>
 
-      <!-- Right Panel (10%) -->
+      <!-- Right Panel (empty now since dropdown is in header) -->
       <aside class="right-panel">
-        <div class="dropdown">
-          <button
-            class="dropdown-button"
-            id="nav-toggle"
-            aria-expanded="false"
-            aria-haspopup="true"
-          >
-            <span class="hamburger-icon"></span>
-          </button>
-          <div class="dropdown-content hidden" id="dropdown-menu">
-            <a href="#">Home</a>
-            <a href="/tabs/resume.html">Resume</a>
-            <a href="/tabs/portfolio.html">Portfolio</a>
-            <a href="/tabs/pinterest.html">Pinterest</a>
-            <a href="/tabs/contact.html">Contact</a>
-          </div>
-        </div>
+        <!-- Empty - dropdown moved to header -->
       </aside>
     </div>
 

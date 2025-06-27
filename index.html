@@ -16,12 +16,33 @@
   </head>
 
   <body>
+    <!-- Fixed Header with Navigation -->
+    <header class="main-header">
+      <div class="dropdown">
+        <button
+          class="dropdown-button"
+          id="nav-toggle"
+          aria-expanded="false"
+          aria-haspopup="true"
+        >
+          <span class="hamburger-icon"></span>
+        </button>
+        <div class="dropdown-content hidden" id="dropdown-menu">
+          <a href="#">Home</a>
+          <a href="/tabs/resume.html">Resume</a>
+          <a href="/tabs/portfolio.html">Portfolio</a>
+          <a href="/tabs/pinterest.html">Pinterest</a>
+          <a href="/tabs/contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
     <div class="container">
       <!-- Left Container: Profile -->
       <aside class="left-container" aria-label="Profile section">
         <div class="profile-box">
           <img
-            src="assets/profile.jpg"
+            src="assets/IMG_0682.jpg"
             alt="Arshia Shabbir"
             width="200"
             height="200"
@@ -32,27 +53,8 @@
         </div>
       </aside>
 
-      <!-- Right Container: Main content and Navigation -->
-      <main class="right-container" aria-label="Main content and navigation">
-        <!-- Hamburger Dropdown -->
-        <div class="dropdown">
-          <button
-            class="dropdown-button"
-            id="nav-toggle"
-            aria-expanded="false"
-            aria-haspopup="true"
-          >
-            <span class="hamburger-icon"></span>
-          </button>
-          <div class="dropdown-content hidden" id="dropdown-menu">
-            <a href="#">Home</a>
-            <a href="/tabs/resume.html">Resume</a>
-            <a href="/tabs/portfolio.html">Portfolio</a>
-            <a href="/tabs/pinterest.html">Pinterest</a>
-            <a href="/tabs/contact.html">Contact</a>
-          </div>
-        </div>
-
+      <!-- Right Container: Main content -->
+      <main class="right-container" aria-label="Main content">
         <!-- Info Sections -->
         <section class="info-section" id="home">
           <h3>My Goals</h3>
